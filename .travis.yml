@@ -10,6 +10,6 @@ before_deploy:
 
 deploy:
     provider: script
-    script: docker push nishikantsingh/myfirstrepository/node
+    script: docker push nishikantsingh/node
     on:
       branch: newbranch1
