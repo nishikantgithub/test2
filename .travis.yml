@@ -2,6 +2,14 @@ sudo: required
 services:
   - docker
 
-  script:
+script:
     - docker build -t nishikantsingh/node .
     - docker images nishikantsingh/node
+before_deploy:
+    - docker login -u nishikantsingh -p Novm@2020
+
+deploy:
+    provider: script
+    script: docker push nishikantsingh/myfirstrepository/node
+    on:
+      branch master
